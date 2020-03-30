@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<AspNetCore21WebApp.Models.Ship>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Ships";
 }
 
-<h2>Index</h2>
+<h2>@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Add New Ship</a>
 </p>
 <table class="table">
     <thead>
@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.ModifiedBy)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ShipId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ShipId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ShipId">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.ShipId" class="btn btn-info btn-xs">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.ShipId" class="btn btn-warning btn-xs">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.ShipId" class="btn btn-danger btn-xs">Delete</a>
             </td>
         </tr>
 }

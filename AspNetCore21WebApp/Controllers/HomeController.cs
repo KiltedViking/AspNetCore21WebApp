@@ -17,7 +17,7 @@ namespace AspNetCore21WebApp.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "About Kilted Viking's Cruises, or project AspNetCore21WebApp. ;-)";
 
             return View();
         }

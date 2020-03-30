@@ -1,8 +1,12 @@
 # Solution AspNetCore21WebApp
-An ASP.NET Core 2.1 Web Application to test developing using Code First and Migrations. (P.S. Dates are in Swedish format, i.e. YYYY-MM-DD.)
+An ASP.NET Core 2.1 Web Application to test developing using Code First, migrations, different types of relationships, and Github from Visual Studio 2017. (P.S. Dates are in Swedish format, i.e. YYYY-MM-DD.)
 
 ## Background
 I'm currently developing a simple application, similar to this one, and need a project to test things I haven't done yet, like adding a mandatory field, which should require creating column in database with a default value. ;-)
+
+The solution was created in Visual Studio 2017 using ASP.NET Core version 2.1 (i.e. a bit "outdated") using SQL Server Express LocalDB.
+
+The project is developed for the fictitious company "Kilted Viking's Cruises" (in an attempt to make it a bit more fun ;-)). References to more information are inserted as comments in code and any customisations of "standard code" are tagged by comments starting with BP.
 
 ## Model
 The basic idea is to manage cruise ships.

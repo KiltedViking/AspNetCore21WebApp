@@ -1,12 +1,11 @@
 ﻿@model AspNetCore21WebApp.Models.Restaurant
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add New Restaurant";
 }
 
-<h2>Create</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>Restaurant</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,12 +21,12 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="RestaurantName" class="control-label"></label>
+                <label asp-for="RestaurantName" class="control-label"></label> <span class="badge">M</span>
                 <input asp-for="RestaurantName" class="form-control" />
                 <span asp-validation-for="RestaurantName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
+                <label asp-for="CreatedAt" class="control-label"></label> <span class="badge">M</span>
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
@@ -37,7 +36,7 @@
                 <span asp-validation-for="ModifiedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CreatedBy" class="control-label"></label>
+                <label asp-for="CreatedBy" class="control-label"></label> <span class="badge">M</span>
                 <input asp-for="CreatedBy" class="form-control" />
                 <span asp-validation-for="CreatedBy" class="text-danger"></span>
             </div>
@@ -47,14 +46,14 @@
                 <span asp-validation-for="ModifiedBy" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-warning">Cancel (Return to Restaurants)</a>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

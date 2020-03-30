@@ -1,12 +1,10 @@
 ﻿@model AspNetCore21WebApp.Models.Menu
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Menu";
 }
 
-<h2>Edit</h2>
-
-<h4>Menu</h4>
+<h2>@ViewData["Title"]</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -58,14 +56,15 @@
                 <span asp-validation-for="ApprovedBy" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Details" asp-route-id="@Model.MenuId" class="btn btn-warning">Cancel (Return to Menu Details)</a>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-info">Return to Menus</a>
 </div>
 
 @section Scripts {

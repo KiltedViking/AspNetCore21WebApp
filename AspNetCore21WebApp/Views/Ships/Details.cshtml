@@ -1,13 +1,12 @@
 ﻿@model AspNetCore21WebApp.Models.Ship
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Ship Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Ship</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -49,6 +48,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ShipId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ShipId" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-info">Return to Ships</a>
 </div>

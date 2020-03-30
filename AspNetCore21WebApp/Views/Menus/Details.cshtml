@@ -1,13 +1,12 @@
 ﻿@model AspNetCore21WebApp.Models.Menu
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Menu Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Menu</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -61,6 +60,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.MenuId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.MenuId" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-info">Return to Menus</a>
 </div>

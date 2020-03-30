@@ -36,6 +36,8 @@ namespace AspNetCore21WebApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            //BP - Add support for database 
+            //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-3.1#register-the-schoolcontext
             services.AddDbContext<AspNetCore21DbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("AspNetCore21Db"))
             );

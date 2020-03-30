@@ -1,16 +1,21 @@
 ﻿@model AspNetCore21WebApp.Models.Restaurant
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Ship";
 }
 
-<h2>Delete</h2>
+<h2>@ViewData["Title"]</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Restaurant</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ship)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ship.ShipName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.RestaurantName)
         </dt>
@@ -45,7 +50,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="RestaurantId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-warning">Cancel (Return to Restaurants)</a>
     </form>
 </div>

@@ -1,12 +1,11 @@
 ﻿@model AspNetCore21WebApp.Models.Restaurant
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Restaurant";
 }
 
-<h2>Edit</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>Restaurant</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,7 +14,7 @@
             <input type="hidden" asp-for="RestaurantId" />
 
             <div class="form-group">
-                <label asp-for="ShipId" class="control-label"></label>
+                <label asp-for="ShipId" class="control-label">Ship</label>
                 <select asp-for="ShipId" asp-items="ViewBag.ShipList" class="form-control">
                     <option value=""> - Select ship - </option>
                 </select>
@@ -48,14 +47,12 @@
                 <span asp-validation-for="ModifiedBy" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-action="Details" asp-route-id="@Model.RestaurantId" class="btn btn-warning">Cancel</a>
+                <a asp-action="Index" class="btn btn-info">Return to Restaurants</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
