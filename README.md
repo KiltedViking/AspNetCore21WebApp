@@ -38,7 +38,7 @@ I got a warning from Github about vunerability about version of jQuery (v. 3.3.1
 
 https://www.stevejgordon.co.uk/library-manager-libman-visual-studio-2017
 
-So I followed steps to add LibMan's manifest file (`libman.json`) to project, copied the content of property `libraries` and made changes to update my libraries. (Please note that I didn't move to Bootstrap v. 4. ;-))
+So I followed steps to add LibMan's manifest file (`libman.json`) to project, copied the content of property `libraries` and made changes to update my libraries. (Please note that I didn't move to Bootstrap v. 4. ;-)) I also added settings for upgrading jQuery-validation libraries, which auto-complete made easy.
 
 ```json
 {
@@ -64,6 +64,27 @@ So I followed steps to add LibMan's manifest file (`libman.json`) to project, co
       "destination": "wwwroot/lib/jquery",
       "files": [
         "jquery.min.js"
+      ]
+    },
+    {
+      "library": "jquery@3.5.0",
+      "destination": "wwwroot/lib/jquery",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validate@1.19.1",
+      "destination": "wwwroot/lib/jquery-validation/",
+      "files": [
+        "jquery.validate.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/",
+      "files": [
+        "jquery.validate.unobtrusive.min.js" 
       ]
     }
   ]
