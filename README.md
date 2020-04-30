@@ -1,6 +1,10 @@
 # Solution AspNetCore21WebApp
 An ASP.NET Core 2.1 Web Application to test developing using Code First, migrations, different types of relationships, and Github from Visual Studio 2017. (P.S. Dates are in Swedish format, i.e. YYYY-MM-DD.)
 
+## Security warning
+
+*Please* update any dependencies before using code in this repository! (I've already had one security warning regarding jQuery library.)
+
 ## Background
 I'm currently developing a simple application, similar to this one, and need a project to test things I haven't done yet, like adding a mandatory field, which should require creating column in database with a default value. ;-)
 
@@ -23,6 +27,53 @@ So far, I've only got as far as creating the entities Ship, Restaurant, and Menu
 
 ### TODO 2020-03-28
 The plan is to add a mandatory field Year (or YearValid) to Menu using Migration, which should require me to add some code to method OnModelCreating that sets the newly added field as mandatory and a default value.
+
+## Things learnt
+
+This section contains some things learnt while working with this project. One thing learnt is the nice Github function that checks for vunerabilities in code, like jQuery libraries.
+
+### Updating client-side libraries
+
+I got a warning from Github about vunerability about version of jQuery (v. 3.3.1), so I decided to update the package (and Bootstrap) only to find out that it couldn't be done via NuGet package manager... :-( Luckily I found Steve Gordon's blog post below, which showed me how to use Visual Studio's Library Manager to upgrade packages. ;-)
+
+https://www.stevejgordon.co.uk/library-manager-libman-visual-studio-2017
+
+So I followed steps to add LibMan's manifest file (`libman.json`) to project, copied the content of property `libraries` and made changes to update my libraries. (Please note that I didn't move to Bootstrap v. 4. ;-))
+
+```json
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@3.4.1",
+      "destination": "wwwroot/lib/bootstrap",
+      "files": [
+        "js/bootstrap.min.js",
+        "css/bootstrap-theme.min.css",
+        "css/bootstrap.min.css",
+        "fonts/glyphicons-halflings-regular.eot",
+        "fonts/glyphicons-halflings-regular.svg",
+        "fonts/glyphicons-halflings-regular.ttf",
+        "fonts/glyphicons-halflings-regular.woff",
+        "fonts/glyphicons-halflings-regular.woff2"
+      ]
+    },
+    {
+      "library": "jquery@3.5.0",
+      "destination": "wwwroot/lib/jquery",
+      "files": [
+        "jquery.min.js"
+      ]
+    }
+  ]
+}
+```
+
+## Thanks
+
+Thanks to Steve Gordon and all others sharing their knowledge helping me to move forward in developing! ;-)
+
 
 Björn G. D. Persson
 "KIlted Viking"
